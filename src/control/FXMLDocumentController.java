@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 
 /**
  *
@@ -19,12 +20,18 @@ import javafx.scene.control.Label;
 public class FXMLDocumentController implements Initializable {
     
     @FXML
-    private Label label;
+    private Label dados;
+    @FXML
+    private Label lanzamientos;
+    @FXML
+    private ImageView dado1;
+    @FXML
+    private ImageView dado2;
+    
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
-        label.setText("hola!");
     }
     
     @Override
