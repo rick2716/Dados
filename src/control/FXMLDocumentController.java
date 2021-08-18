@@ -12,6 +12,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,10 +31,19 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private ImageView dado2;
     
+    @FXML
+    WebView listaLanzamiento = new WebView();
+    WebEngine webEngine = listaLanzamiento.getEngine();
+    
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
+    private void IniciarDados(ActionEvent event) {
+        
+        int dado1= (int)(Math.random()*6+1);
+        JOptionPane.showMessageDialog(null, dado1);
+        
+        
+        
     }
     
     @Override

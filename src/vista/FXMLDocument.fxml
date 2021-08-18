@@ -42,7 +42,7 @@
             <Shadow />
          </effect>
       </Pane>
-      <Button fx:id="botonIniciar" layoutX="109.0" layoutY="313.0" mnemonicParsing="false" text="Iniciar" textAlignment="CENTER">
+      <Button fx:id="botonIniciar" layoutX="109.0" layoutY="313.0" mnemonicParsing="false" onAction="#IniciarDados" text="Iniciar" textAlignment="CENTER">
          <font>
             <Font name="Baskerville Old Face" size="20.0" />
          </font>

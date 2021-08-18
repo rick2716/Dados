@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.FXMLDocumentController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="380.0" prefWidth="721.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.FXMLDocumentController">
+   <children>
+      <Label fx:id="dados" layoutX="261.0" layoutY="14.0" text="Dados" textAlignment="CENTER">
+         <font>
+            <Font name="Baskerville Old Face" size="46.0" />
+         </font>
+      </Label>
+      <Pane layoutX="37.0" layoutY="114.0" opacity="0.34" prefHeight="172.0" prefWidth="224.0" style="-fx-background-color: gray;">
+         <children>
+            <ImageView fx:id="dado1" fitHeight="150.0" fitWidth="200.0" layoutX="12.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <Shadow />
+               </effect>
+            </ImageView>
+         </children>
+         <effect>
+            <Shadow />
+         </effect>
+      </Pane>
+      <Pane layoutX="269.0" layoutY="114.0" opacity="0.34" prefHeight="172.0" prefWidth="224.0" style="-fx-background-color: gray;">
+         <children>
+            <ImageView fx:id="dado2" fitHeight="150.0" fitWidth="200.0" layoutX="12.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <Shadow />
+               </effect>
+            </ImageView>
+         </children>
+         <effect>
+            <Shadow />
+         </effect>
+      </Pane>
+      <Button fx:id="botonIniciar" layoutX="109.0" layoutY="313.0" mnemonicParsing="false" onAction="#IniciarDados" text="Iniciar" textAlignment="CENTER">
+         <font>
+            <Font name="Baskerville Old Face" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="botonParar" layoutX="346.0" layoutY="313.0" mnemonicParsing="false" text="Parar">
+         <font>
+            <Font name="Baskerville Old Face" size="20.0" />
+         </font>
+      </Button>
+      <WebView fx:id="listaLanzamiento" layoutX="547.0" layoutY="90.0" prefHeight="200.0" prefWidth="141.0" />
+      <Label fx:id="lanzamientos" layoutX="537.0" layoutY="42.0" text="Lanzamientos" textAlignment="CENTER">
+         <font>
+            <Font name="Baskerville Old Face" size="29.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
