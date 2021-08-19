@@ -5,6 +5,9 @@
  */
 package control;
 
+import modelo.Tools;
+
+
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
@@ -69,7 +72,7 @@ public class FXMLDocumentController implements Initializable {
         
         int dado1= (int)(Math.random()*6+1);
         
-        
+        webEngine.loadContent(modelo.Tools.convertirPilaAHtml(p));
         
        
         
@@ -80,6 +83,7 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        webEngine = listaLanzamiento.getEngine();
         listaImagenes = new LinkedList<>();
         Recurso_1 = new Image("/imagenes/Recurso_1.png");
         Recurso_2 = new Image("/imagenes/dado_1.png");
