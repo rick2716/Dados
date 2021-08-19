@@ -6,11 +6,15 @@
 package control;
 
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
+import java.util.Timer;
+import java.util.TimerTask;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -31,6 +35,17 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private ImageView dado2;
     
+    Image Recurso_1;
+    Image Recurso_2;
+    Image Recurso_3;
+    Image Recurso_4;
+    Image Recurso_5;
+    Image Recurso_6;
+    
+    LinkedList<Image> listaImagenes;
+    
+    int i;
+    
     @FXML
     WebView listaLanzamiento = new WebView();
     WebEngine webEngine = listaLanzamiento.getEngine();
@@ -38,9 +53,25 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void IniciarDados(ActionEvent event) {
+        TimerTask timerTask = new TimerTask(){
+            @Override
+            public void run() {
+                dado1.setImage(listaImagenes.get(i));
+                i++;
+                if (i>2){
+                    i=0;
+                }
+            }
+        };
+        
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(timerTask, 0, 3000);
         
         int dado1= (int)(Math.random()*6+1);
-        JOptionPane.showMessageDialog(null, dado1);
+        
+        
+        
+       
         
         
         
@@ -49,6 +80,19 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        listaImagenes = new LinkedList<>();
+        Recurso_1 = new Image("/imagenes/Recurso_1.png");
+        Recurso_2 = new Image("/imagenes/dado_1.png");
+        Recurso_3 = new Image("/imagenes/Recurso_3.png");
+        Recurso_4 = new Image("/imagenes/Recurso_4.png");
+        Recurso_5 = new Image("/imagenes/Recurso_5.png");
+        Recurso_6 = new Image("/imagenes/Recurso_6.png");
+        listaImagenes.add(Recurso_1);
+        listaImagenes.add(Recurso_2);
+        listaImagenes.add(Recurso_3);
+        listaImagenes.add(Recurso_4);
+        listaImagenes.add(Recurso_5);
+        listaImagenes.add(Recurso_6);
     }    
     
 }
