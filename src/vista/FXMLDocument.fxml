@@ -18,7 +18,7 @@
             <Font name="Baskerville Old Face" size="46.0" />
          </font>
       </Label>
-      <Button fx:id="botonIniciar" layoutX="109.0" layoutY="313.0" mnemonicParsing="false" onAction="#IniciarDados" text="Iniciar" textAlignment="CENTER">
+      <Button fx:id="botonIniciar" layoutX="103.0" layoutY="367.0" mnemonicParsing="false" onAction="#IniciarDados" text="Iniciar" textAlignment="CENTER">
          <font>
             <Font name="Baskerville Old Face" size="20.0" />
          </font>
@@ -34,6 +34,7 @@
             <Font name="Baskerville Old Face" size="29.0" />
          </font>
       </Label>
-      <ImageView fx:id="dado1" fitHeight="223.0" fitWidth="235.0" layoutX="264.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="dado1" fitHeight="223.0" fitWidth="235.0" layoutX="278.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="dado2" fitHeight="223.0" fitWidth="235.0" layoutX="26.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

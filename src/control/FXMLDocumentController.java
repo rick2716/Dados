@@ -5,7 +5,7 @@
  */
 package control;
 
-import modelo.Tools;
+
 
 
 import java.net.URL;
@@ -47,7 +47,7 @@ public class FXMLDocumentController implements Initializable {
     
     LinkedList<Image> listaImagenes;
     
-    int i;
+    
     
     @FXML
     WebView listaLanzamiento = new WebView();
@@ -56,23 +56,21 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void IniciarDados(ActionEvent event) {
+        int i = (int)(Math.random()*6+1);
+        int j = (int)(Math.random()*6+1);
         TimerTask timerTask = new TimerTask(){
             @Override
             public void run() {
-                dado1.setImage(listaImagenes.get(i));
-                i++;
-                if (i>2){
-                    i=0;
-                }
+                dado1.setImage(listaImagenes.get(i-1));
+                dado2.setImage(listaImagenes.get(j-1));
             }
         };
         
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(timerTask, 0, 3000);
         
-        int dado1= (int)(Math.random()*6+1);
         
-        webEngine.loadContent(modelo.Tools.convertirPilaAHtml(p));
+;
         
        
         
@@ -86,7 +84,7 @@ public class FXMLDocumentController implements Initializable {
         webEngine = listaLanzamiento.getEngine();
         listaImagenes = new LinkedList<>();
         Recurso_1 = new Image("/imagenes/Recurso_1.png");
-        Recurso_2 = new Image("/imagenes/dado_1.png");
+        Recurso_2 = new Image("/imagenes/Recurso_2.png");
         Recurso_3 = new Image("/imagenes/Recurso_3.png");
         Recurso_4 = new Image("/imagenes/Recurso_4.png");
         Recurso_5 = new Image("/imagenes/Recurso_5.png");
