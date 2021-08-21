@@ -67,7 +67,7 @@ public class FXMLDocumentController implements Initializable {
         };
         
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(timerTask, 0, 3000);
+        timer.scheduleAtFixedRate(timerTask, 0, 2000);
         
         
 ;
